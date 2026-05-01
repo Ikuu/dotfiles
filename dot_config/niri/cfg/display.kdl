@@ -1,20 +1,9 @@
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://yalter.github.io/niri/Configuration:-Outputs
+// ────────────── Output Configuration ──────────────
+// You can run `niri msg outputs` to get the correct name for your displays.
+// You will have to remove "/-" and edit it before it takes effect.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
-output "DP-1" {
-    mode "3440x1440@164.900"
-    scale 1
-    position x=0 y=0
-    variable-refresh-rate on-demand=true
-    focus-at-startup
-}
-
-output "DP-2" {
-    mode "2560x1440@165.000"
-    scale 1
-    position x=3440 y=0
-    variable-refresh-rate on-demand=true
+/- output "DP-1" {
+    mode "2560x1440@359.979" // Set resolution and refresh rate
+    scale 1 // No scaling (use 2 for HiDPI)
 }
