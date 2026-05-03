@@ -109,6 +109,7 @@ binds {
     // ─── Layout Controls ───
     Mod+F                               { maximize-column; }
     Mod+CTRL+F                          { expand-column-to-available-width; }
+    Mod+M				{ maximize-window-to-edges; }
     Mod+C                               { center-column; }
     Mod+CTRL+C                          { center-visible-columns; }
     Mod+Minus                           { set-column-width "-10%"; }
