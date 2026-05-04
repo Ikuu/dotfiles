@@ -127,6 +127,10 @@ binds {
     CTRL+Shift+2                        { spawn "dot-screenshot" "window"; }
     CTRL+Shift+3                        { spawn "dot-screenshot" "monitor-focused"; }
 
+    // ─── Clipboard ───
+    Mod+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "toggle"; }
+    Mod+Shift+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "wipe"; }
+
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.
     // It disables any active keyboard shortcut inhibitor, restoring control.
