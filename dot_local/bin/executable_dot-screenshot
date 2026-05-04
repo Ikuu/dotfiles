@@ -29,4 +29,4 @@ monitor-all)
   echo "'${MODE}' is not a supported, aborting!" >&2
   exit 1
   ;;
-esac | satty --filename - --output-filename "~/Pictures/Screenshots/screenshot-%+.png"
+esac | satty --filename - --output-filename "~/Pictures/Screenshots/screenshot-%+.png"

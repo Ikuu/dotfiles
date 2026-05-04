@@ -21,6 +21,13 @@
         draw-border-with-background false
     }
 
+    window-rule {
+	match app-id=r#"^com\.gabm\.satty$"#
+	open-floating true
+	min-width 700
+	min-height 450
+    }
+
     layer-rule {
         match namespace="^noctalia-wallpaper*"
         place-within-backdrop true
