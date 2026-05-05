@@ -2,3 +2,7 @@
 edit = [
     { run = "nvim %s", block = true, for="unix" },
 ]
+
+[preview]
+max_height= 1000
+max_width = 1000
