@@ -106,6 +106,12 @@ binds {
 
     Mod+TAB                             { focus-workspace-previous; }
 
+    // ─── Tiling Controls ───  
+    Mod+BracketLeft                     { consume-or-expel-window-left; }
+    Mod+BracketRight                    { consume-or-expel-window-right; }
+    Mod+Comma                           { consume-window-into-column; } 
+    Mod+Period                          { expel-window-from-column; }
+
     // ─── Layout Controls ───
     Mod+F                               { maximize-column; }
     Mod+CTRL+F                          { expand-column-to-available-width; }
