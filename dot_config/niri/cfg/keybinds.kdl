@@ -6,14 +6,14 @@ binds {
     // ─── noctalia-shell keybinds ───
     // https://docs.noctalia.dev/getting-started/keybinds/
 
-    Mod+Shift+ESCAPE                     { show-hotkey-overlay; }
+    Mod+Shift+ESCAPE                    { show-hotkey-overlay; }
 
     // ─── Applications ───
     Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
     Mod+D                               hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+B                               hotkey-overlay-title="Open Browser: waterfox" { spawn "waterfox"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Mod+Shift+Q                        hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
     // Please choose your own file manager.
     Mod+E                               hotkey-overlay-title="File Manager: Yazi" { spawn "ghostty" "-e" "yazi"; }
@@ -109,23 +109,25 @@ binds {
     // ─── Layout Controls ───
     Mod+F                               { maximize-column; }
     Mod+CTRL+F                          { expand-column-to-available-width; }
-    Mod+M				{ maximize-window-to-edges; }
+    Mod+M	                              { maximize-window-to-edges; }
     Mod+C                               { center-column; }
     Mod+CTRL+C                          { center-visible-columns; }
     Mod+Minus                           { set-column-width "-10%"; }
     Mod+Equal                           { set-column-width "+10%"; }
     Mod+Shift+Minus                     { set-window-height "-10%"; }
     Mod+Shift+Equal                     { set-window-height "+10%"; }
-
+    Mod+Shift+J                         { set-column-width "33.3333%"; }
+    Mod+Shift+K                         { set-column-width "50%"; }
+   
     // ─── Modes ───
     Mod+T                               { toggle-window-floating; }
     Mod+Shift+F                         { fullscreen-window; }
     Mod+W                               { toggle-column-tabbed-display; }
 
     // ─── Screenshots ───
-    CTRL+Shift+1                        { spawn "dot-screenshot" "region"; }
-    CTRL+Shift+2                        { spawn "dot-screenshot" "window"; }
-    CTRL+Shift+3                        { spawn "dot-screenshot" "monitor-focused"; }
+    CTRL+Shift+1                        hotkey-overlay-title="Screenshot Region" { spawn "dot-screenshot" "region"; }
+    CTRL+Shift+2                        hotkey-overlay-title="Screenshot Window" { spawn "dot-screenshot" "window"; }
+    CTRL+Shift+3                        hotkey-overlay-title="Screenshot Focused Monitor" { spawn "dot-screenshot" "monitor-focused"; }
 
     // ─── Clipboard ───
     Mod+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "toggle"; }
