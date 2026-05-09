@@ -13,8 +13,9 @@
 
         tab-indicator {
           gap 2
+          width 6
+          length total-proportion=1.0
           place-within-column
-          width 8
         }
 
         preset-column-widths {
