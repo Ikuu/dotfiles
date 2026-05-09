@@ -118,7 +118,8 @@ binds {
     Mod+Shift+Equal                     { set-window-height "+10%"; }
     Mod+Shift+J                         { set-column-width "33.3333%"; }
     Mod+Shift+K                         { set-column-width "50%"; }
-   
+    Mod+Shift+L                         { set-column-width "67.3333%"; }
+  
     // ─── Modes ───
     Mod+T                               { toggle-window-floating; }
     Mod+Shift+F                         { fullscreen-window; }
