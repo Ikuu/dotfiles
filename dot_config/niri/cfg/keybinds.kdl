@@ -139,7 +139,7 @@ binds {
     Mod+F                               { maximize-column; }
     Mod+Shift+F                         { fullscreen-window; }
     Mod+W                               { toggle-column-tabbed-display; }
-    Mod+M	                              { maximize-window-to-edges; }
+    Mod+M                               { maximize-window-to-edges; }
     Mod+Shift+V                         { switch-focus-between-floating-and-tiling; } 
 
     // ─── Screenshots ───

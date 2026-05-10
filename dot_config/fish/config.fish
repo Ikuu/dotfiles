@@ -1,5 +1,5 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
-source ~/.config/fzf/config.fish
+source ~/.config/fzf/config.fzf
 
 # overwrite greeting
 # potentially disabling fastfetch

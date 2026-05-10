@@ -4,5 +4,7 @@ confirm-close-surface=false
 
 font-family="Maple Mono"
 
+theme=catppuccin-macchiato.conf
+
 window-height=30
 window-width=110
