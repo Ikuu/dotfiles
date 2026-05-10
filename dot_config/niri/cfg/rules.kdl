@@ -22,10 +22,10 @@
     }
 
     window-rule {
-	      match app-id=r#"^com\.gabm\.satty$"#
+        match app-id=r#"^com\.gabm\.satty$"#
 	      open-floating true
-	      min-width 700
-	      min-height 450
+        min-width 700
+        min-height 450
     }
 
     layer-rule {
