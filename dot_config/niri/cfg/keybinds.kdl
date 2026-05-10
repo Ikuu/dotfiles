@@ -1,22 +1,27 @@
+// ────────────── Keybindings ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
+
 binds {
-
-    // ────────────── Keybindings ──────────────
-    // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
-
-    // ─── noctalia-shell keybinds ───
-    // https://docs.noctalia.dev/getting-started/keybinds/
-
     Mod+Shift+ESCAPE                    { show-hotkey-overlay; }
 
     // ─── Applications ───
     Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
+    Mod+E                               hotkey-overlay-title="Open File Manager: Yazi" { spawn "ghostty" "-e" "yazi"; }
+    Mod+X                               hotkey-overlay-title="Open Text Editor: Neovim" { spawn "ghostty" "-e" "nvim"; }
+    Mod+B                               hotkey-overlay-title="Open Browser: Waterfox" { spawn "waterfox"; }
+
+    // ─── Noctalia Shell ───
+    // https://docs.noctalia.dev/getting-started/keybinds/
+    Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+    Mod+S                               hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    Mod+Shift+S                         hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
     Mod+D                               hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+B                               hotkey-overlay-title="Open Browser: waterfox" { spawn "waterfox"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
-    // Please choose your own file manager.
-    Mod+E                               hotkey-overlay-title="File Manager: Yazi" { spawn "ghostty" "-e" "yazi"; }
+    // ─── Clipboard ───
+    Mod+V                               hotkey-overlay-title="Toggle Clipboard History" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "toggle"; }
+    Mod+Ctrl+V                          hotkey-overlay-title="Wipe Clipboard History"{ spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "wipe"; }
 
     // ─── Media Controls ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
@@ -110,36 +115,37 @@ binds {
     // ─── Tiling Controls ───
     Mod+BracketLeft                     { consume-or-expel-window-left; }
     Mod+BracketRight                    { consume-or-expel-window-right; }
+
     Mod+Comma                           { consume-window-into-column; }
     Mod+Period                          { expel-window-from-column; }
 
+    Mod+R                               { switch-preset-column-width; }
+    Mod+Shift+R                         { switch-preset-column-width-back; }
+
+    Mod+Ctrl+Shift+R                    { switch-preset-window-height; }
+    Mod+Ctrl+R                          { reset-window-height; }
+
     // ─── Layout Controls ───
-    Mod+F                               { maximize-column; }
     Mod+CTRL+F                          { expand-column-to-available-width; }
-    Mod+M	                              { maximize-window-to-edges; }
     Mod+C                               { center-column; }
     Mod+CTRL+C                          { center-visible-columns; }
     Mod+Minus                           { set-column-width "-10%"; }
     Mod+Equal                           { set-column-width "+10%"; }
     Mod+Shift+Minus                     { set-window-height "-10%"; }
     Mod+Shift+Equal                     { set-window-height "+10%"; }
-    Mod+Shift+J                         { set-column-width "33.3333%"; }
-    Mod+Shift+K                         { set-column-width "50%"; }
-    Mod+Shift+L                         { set-column-width "67.3333%"; }
   
     // ─── Modes ───
     Mod+T                               { toggle-window-floating; }
+    Mod+F                               { maximize-column; }
     Mod+Shift+F                         { fullscreen-window; }
     Mod+W                               { toggle-column-tabbed-display; }
+    Mod+M	                              { maximize-window-to-edges; }
+    Mod+Shift+V                         { switch-focus-between-floating-and-tiling; } 
 
     // ─── Screenshots ───
     CTRL+Shift+1                        hotkey-overlay-title="Screenshot Region" { spawn "dot-screenshot" "region"; }
     CTRL+Shift+2                        hotkey-overlay-title="Screenshot Window" { spawn "dot-screenshot" "window"; }
     CTRL+Shift+3                        hotkey-overlay-title="Screenshot Focused Monitor" { spawn "dot-screenshot" "monitor-focused"; }
-
-    // ─── Clipboard ───
-    Mod+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "toggle"; }
-    Mod+Shift+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "wipe"; }
 
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.
