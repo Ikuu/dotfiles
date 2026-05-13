@@ -1,4 +1,5 @@
 [mgr]
 prepend_keymap = [
     { on = "T", run = "shell --orphan --confirm ghostty", desc = "Open terminal at current dir" },
+    { on = "<C-S-s>", run = "shell 'copy-to-phone %h'", desc = "Copy current file to phone" },
 ]
