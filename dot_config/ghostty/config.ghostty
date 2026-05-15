@@ -3,6 +3,7 @@ background-opacity=0.8
 confirm-close-surface=false
 
 font-family="Maple Mono"
+font-size=13
 
 theme=catppuccin-macchiato.conf
 
