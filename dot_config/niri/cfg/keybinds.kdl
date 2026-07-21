@@ -13,22 +13,23 @@ binds {
 
     // ─── Noctalia Shell ───
     // https://docs.noctalia.dev/getting-started/keybinds/
-    Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
-    Mod+S                               hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-    Mod+Shift+S                         hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
-    Mod+D                               hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+S                               hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Shift+S                         hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+D                               hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
+    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; }
+    Alt+Tab                             { spawn-sh "noctalia msg window-switcher"; }
 
     // ─── Clipboard ───
-    Mod+V                               hotkey-overlay-title="Toggle Clipboard History" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "toggle"; }
-    Mod+Ctrl+V                          hotkey-overlay-title="Wipe Clipboard History"{ spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipboard" "wipe"; }
+    Mod+V                               hotkey-overlay-title="Toggle Clipboard History" { spawn-sh "noctalia msg panel-toggle clipboard"; }
+    Mod+Ctrl+V                          hotkey-overlay-title="Wipe Clipboard History" { spawn-sh "noctalia msg clipboard-clear"; }
 
     // ─── Media Controls ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
     XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }
     XF86AudioMute                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
-    CTRL+Alt+M                          allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; } 
+    CTRL+Alt+M                          allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; }
     XF86AudioMicMute                    allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }
     XF86AudioNext                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }
@@ -134,14 +135,14 @@ binds {
     Mod+Equal                           { set-column-width "+10%"; }
     Mod+Shift+Minus                     { set-window-height "-10%"; }
     Mod+Shift+Equal                     { set-window-height "+10%"; }
-  
+
     // ─── Modes ───
     Mod+T                               { toggle-window-floating; }
     Mod+F                               { maximize-column; }
     Mod+Shift+F                         { fullscreen-window; }
     Mod+W                               { toggle-column-tabbed-display; }
     Mod+M                               { maximize-window-to-edges; }
-    Mod+Shift+V                         { switch-focus-between-floating-and-tiling; } 
+    Mod+Shift+V                         { switch-focus-between-floating-and-tiling; }
 
     // ─── Screenshots ───
     CTRL+Shift+1                        hotkey-overlay-title="Screenshot Region" { spawn "dot-screenshot" "region"; }
