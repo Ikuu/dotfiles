@@ -1,0 +1,22 @@
+# Umbriel configuration
+#
+# Settings live in the cfg/ folder beside this file. Most changes apply when a
+# file is saved. Check edits with `umbriel config validate`.
+#
+# Complete reference: https://docs.noctalia.dev/umbriel/
+
+# https://docs.noctalia.dev/umbriel/configuration/#include
+[include]
+files = [
+  "cfg/animation.toml",
+  "cfg/autostart.toml",
+  "cfg/keybinds.toml",
+  "cfg/input.toml",
+  "cfg/display.toml",
+  "cfg/layout.toml",
+  "cfg/rules.toml",
+  "cfg/misc.toml",
+]
+
+[include.optional]
+files = ["noctalia.toml"]

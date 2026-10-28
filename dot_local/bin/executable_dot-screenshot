@@ -10,17 +10,39 @@ set -o nounset
 
 MODE="${1:-region}"
 
+# Umbriel has no screenshot action, so window/monitor modes read the focused
+# window's geometry and the focused output from `umbriel` and pass them to grim.
+if [[ "${XDG_CURRENT_DESKTOP:-}" == "umbriel" ]]; then
+  COMPOSITOR="umbriel"
+else
+  COMPOSITOR="niri"
+fi
+
 case "${MODE}" in
 region)
   grim -g "$(slurp -d)" -
   ;;
 window)
-  niri msg action screenshot-window
-  sleep 0.5
-  wl-paste --type image/png
+  if [[ "${COMPOSITOR}" == "umbriel" ]]; then
+    # e.g. "[tile 1704x1386+10+44]" -> "10,44 1704x1386"
+    geometry="$(umbriel focused-window |
+      grep -oE '[0-9]+x[0-9]+[+-]-?[0-9]+[+-]-?[0-9]+' | head -n1 |
+      sed -E 's/^([0-9]+x[0-9]+)\+?(-?[0-9]+)\+?(-?[0-9]+)$/\2,\3 \1/')"
+    grim -g "${geometry}" -
+  else
+    niri msg action screenshot-window
+    sleep 0.5
+    wl-paste --type image/png
+  fi
   ;;
 monitor-focused)
-  grim -o "$(niri msg --json focused-output | jq --raw-output .name)" -
+  if [[ "${COMPOSITOR}" == "umbriel" ]]; then
+    output="$(umbriel outputs |
+      awk '/^[^ ]/ { name = $1 } /Focused: yes/ { print name; exit }')"
+  else
+    output="$(niri msg --json focused-output | jq --raw-output .name)"
+  fi
+  grim -o "${output}" -
   ;;
 monitor-all)
   grim -

@@ -1,0 +1,120 @@
+# ────────────── Keybindings ──────────────
+# Defining this table replaces the built-in bind set, so every active bind that
+# should remain available is listed here.
+# Syntax: https://docs.noctalia.dev/umbriel/keybinds/
+# Actions: https://docs.noctalia.dev/umbriel/actions/
+
+[keybinds]
+
+# ─── Applications and Session ───
+"Mod+Return" = { action = "spawn:ghostty", repeat = false }
+"Mod+B" = { action = "spawn:waterfox", repeat = false }
+"Mod+E" = { action = "spawn:dolphin", repeat = false }
+"Mod+X" = { action = "spawn:kate", repeat = false }
+"Mod+Ctrl+Escape" = { action = "spawn:ghostty -e btop", repeat = false }
+
+# ─── Noctalia Shell ───
+# https://docs.noctalia.dev/noctalia/ipc/
+"Mod+Alt+L" = { action = "spawn:noctalia msg session lock", repeat = false }
+"Mod+Shift+Q" = { action = "spawn:noctalia msg panel-toggle session", repeat = false }
+# `hold`: a quick Alt+Tab tap jumps straight back to the previous window
+"Alt+Tab" = { action = "spawn:noctalia msg window-switcher hold", repeat = false }
+"Mod+V" = { action = "spawn:noctalia msg panel-toggle clipboard", repeat = false }
+"Mod+Ctrl+V" = { action = "spawn:noctalia msg clipboard-clear", repeat = false }
+"Mod+D" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+S" = { action = "spawn:noctalia msg panel-toggle control-center", repeat = false }
+"Mod+Shift+S" = { action = "spawn:noctalia msg settings-toggle", repeat = false }
+"Mod+Q" = { action = "window-close", repeat = false }
+"Ctrl+Alt+Delete" = { action = "session-quit", repeat = false }  # Asks first
+"Mod+Shift+Escape" = "cheatsheet-toggle"
+# Emergency key: use this when a fullscreen app blocks your keybinds.
+"Mod+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+
+# ─── Media, Volume and Brightness ───
+# Keys from any input device, routed through the Noctalia shell so its OSDs
+# show. Safe while the session is locked.
+# https://docs.noctalia.dev/noctalia/compositor-settings/umbriel
+"XF86AudioRaiseVolume" = { action = "spawn:noctalia msg volume-up", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn:noctalia msg volume-down", allow_when_locked = true }
+"XF86AudioMute" = { action = "spawn:noctalia msg volume-mute", allow_when_locked = true, repeat = false }
+"Ctrl+Alt+M" = { action = "spawn:noctalia msg volume-mute", allow_when_locked = true, repeat = false }
+"XF86AudioPlay" = { action = "spawn:noctalia msg media toggle", allow_when_locked = true, repeat = false }
+"XF86AudioNext" = { action = "spawn:noctalia msg media next", allow_when_locked = true }
+"XF86AudioPrev" = { action = "spawn:noctalia msg media previous", allow_when_locked = true }
+"XF86MonBrightnessUp" = { action = "spawn:noctalia msg brightness-up", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down", allow_when_locked = true }
+
+# ─── Focus and Movement ───
+"Mod+Left" = { action = "window-focus-left", allow_when_inhibited = true }
+"Mod+Down" = { action = "window-focus-down", allow_when_inhibited = true }
+"Mod+Up" = { action = "window-focus-up", allow_when_inhibited = true }
+"Mod+Right" = { action = "window-focus-right", allow_when_inhibited = true }
+# HJKL focus, off for now (arrows only).
+# "Mod+H" = "window-focus-left"
+# "Mod+J" = "window-focus-down"
+# "Mod+K" = "window-focus-up"
+# "Mod+L" = "window-focus-right"
+"Mod+Shift+Left" = { action = "column-move-left", allow_when_inhibited = true }
+"Mod+Shift+Right" = { action = "column-move-right", allow_when_inhibited = true }
+# OmniWM-style: stack into the neighbouring column, press again to pull out.
+"Mod+Ctrl+Shift+Left" = { action = "window-consume-or-expel-left", allow_when_inhibited = true }
+"Mod+Ctrl+Shift+Right" = { action = "window-consume-or-expel-right", allow_when_inhibited = true }
+"Mod+Shift+Down" = { action = "window-move-down", allow_when_inhibited = true }
+"Mod+Shift+Up" = { action = "window-move-up", allow_when_inhibited = true }
+# Focus the monitor on the left/right.
+"Mod+Ctrl+Left" = { action = "output-focus-left", allow_when_inhibited = true }
+"Mod+Ctrl+Right" = { action = "output-focus-right", allow_when_inhibited = true }
+# Send the focused window to the monitor on the left/right.
+"Mod+Comma" = { action = "window-move-to-output-left", allow_when_inhibited = true }
+"Mod+Period" = { action = "window-move-to-output-right", allow_when_inhibited = true }
+
+# ─── Window State and Layout ───
+"Mod+T" = { action = "window-toggle-floating", repeat = false }
+"Mod+Shift+T" = { action = "window-focus-switch-floating", repeat = false }
+"Mod+P" = { action = "window-toggle-pinned", repeat = false }
+"Mod+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
+"Mod+F" = { action = "window-toggle-maximize", repeat = false }         # Full column width
+"Mod+Shift+F" = { action = "window-toggle-fullscreen", repeat = false }
+"Mod+Ctrl+F" = { action = "spawn:/home/alex/.config/umbriel/scripts/column-fill.py", repeat = false }  # Fill remaining width
+"Mod+R" = "window-cycle-primary-extent"
+"Mod+Shift+R" = "window-cycle-primary-extent-back"
+"Mod+Minus" = "window-modify-primary-extent:-0.1"
+"Mod+Equal" = "window-modify-primary-extent:0.1"
+# Needs layout.mode = "dwindle".
+# "Mod+Alt+T" = "layout-toggle-split"
+"Mod+W" = { action = "column-toggle-tabbed", repeat = false }
+"Mod+Alt+Right" = "column-focus-tab-next"
+"Mod+Alt+Left" = "column-focus-tab-previous"
+"Mod+WheelDown" = { action = "workspace-next", cooldown_ms = 150 }
+"Mod+WheelUp" = { action = "workspace-previous", cooldown_ms = 150 }
+"Mod+O" = { action = "overview-toggle", repeat = false }
+
+# ─── Workspaces ───
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
+"Mod+6" = "workspace-switch:6"
+"Mod+7" = "workspace-switch:7"
+"Mod+8" = "workspace-switch:8"
+"Mod+9" = "workspace-switch:9"
+"Mod+Tab" = "workspace-focus-last"
+
+# ─── Screenshots ───
+# dot-screenshot (~/.local/bin) pipes into Satty for annotation.
+"Ctrl+Shift+1" = { action = "spawn:dot-screenshot region", repeat = false }
+"Ctrl+Shift+2" = { action = "spawn:dot-screenshot window", repeat = false }
+"Ctrl+Shift+3" = { action = "spawn:dot-screenshot monitor-focused", repeat = false }
+"Mod+Shift+1" = "window-move-to-workspace:1"
+"Mod+Shift+2" = "window-move-to-workspace:2"
+"Mod+Shift+3" = "window-move-to-workspace:3"
+"Mod+Shift+4" = "window-move-to-workspace:4"
+"Mod+Shift+5" = "window-move-to-workspace:5"
+"Mod+Shift+6" = "window-move-to-workspace:6"
+"Mod+Shift+7" = "window-move-to-workspace:7"
+"Mod+Shift+8" = "window-move-to-workspace:8"
+"Mod+Shift+9" = "window-move-to-workspace:9"
+
+# ─── Scratchpad ───
+"Mod+grave" = { action = "scratchpad-toggle:terminal", repeat = false }  # Drop-down terminal

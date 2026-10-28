@@ -5,7 +5,7 @@ confirm-close-surface=false
 font-family="Maple Mono"
 font-size=13
 
-theme=catppuccin-macchiato.conf
+theme = noctalia
 
 window-height=30
 window-width=110
