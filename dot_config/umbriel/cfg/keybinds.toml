@@ -80,6 +80,10 @@
 "Mod+Shift+R" = "window-cycle-primary-extent-back"
 "Mod+Minus" = "window-modify-primary-extent:-0.1"
 "Mod+Equal" = "window-modify-primary-extent:0.1"
+# Height within a stacked column.
+"Mod+Ctrl+R" = "window-cycle-secondary-extent"
+"Mod+Shift+Minus" = "window-modify-secondary-extent:-0.1"
+"Mod+Shift+Equal" = "window-modify-secondary-extent:0.1"
 # Needs layout.mode = "dwindle".
 # "Mod+Alt+T" = "layout-toggle-split"
 "Mod+W" = { action = "column-toggle-tabbed", repeat = false }

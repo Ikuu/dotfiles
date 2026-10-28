@@ -70,6 +70,7 @@ changes need an Umbriel restart. Check edits with `umbriel config validate`.
 | `Mod+F` / `Mod+Shift+F` | Full column width / fullscreen |
 | `Mod+Ctrl+F` | Widen column to fill the free space |
 | `Mod+R`, `Mod+Minus` / `Mod+Equal` | Cycle width presets, narrower / wider |
+| `Mod+Ctrl+R`, `Mod+Shift+Minus` / `Mod+Shift+Equal` | Cycle height presets, shorter / taller (stacked windows) |
 | `Mod+T` / `Mod+Shift+T` | Toggle floating / switch focus floating-tiled |
 | `Mod+P`, `Mod+M` | Pin, maximize to edges |
 | `Mod+W`, `Mod+Alt+Left/Right` | Tabbed column, switch tabs |
