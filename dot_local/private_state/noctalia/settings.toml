@@ -80,10 +80,11 @@ umbriel_overview_type_to_launch_enabled = true
 
 [theme]
 builtin = "Catppuccin"
+community_palette = "Murasaki"
 mode = "dark"
 pure_black_dark = true
 source = "wallpaper"
-wallpaper_scheme = "m3-rainbow"
+wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "ghostty", "umbriel" ]
