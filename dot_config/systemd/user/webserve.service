@@ -1,0 +1,9 @@
+[Unit]
+Description=Simple web server for ~/web
+
+[Service]
+ExecStart=/usr/bin/python -m http.server 8000 --bind 0.0.0.0 --directory %h/web
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
