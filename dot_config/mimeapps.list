@@ -36,6 +36,7 @@ x-scheme-handler/ror2mm=amethystmodmanager-ror2mm.desktop
 x-scheme-handler/modl=amethystmodmanager-modl.desktop
 x-scheme-handler/nxm=amethystmodmanager-nxm.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+inode/directory=org.kde.dolphin.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Waterfox-6AB4U3.desktop;userapp-Waterfox-S1JOR3.desktop;

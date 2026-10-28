@@ -87,6 +87,7 @@ wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "ghostty", "umbriel" ]
+    community_ids = [ "yazi" ]
 
 [wallpaper]
 transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb", "vortex", "pixel", "diamond", "golden", "melt" ]
