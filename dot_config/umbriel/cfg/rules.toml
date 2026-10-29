@@ -30,11 +30,11 @@ default_floating = true
 default_maximize = false
 default_position = { x = 20, y = 20, anchor = "bottom_right" }
 
-# Steam: float everything except the main window. Umbriel has no `exclude`,
-# so a negative lookahead on the title does it.
+# Steam: float everything except the main window and Big Picture. Umbriel has
+# no `exclude`, so a negative lookahead on the title does it.
 [[window_rule]]
 match.app_id     = "^steam$"
-match.title      = "^(?![Ss]team$)"
+match.title      = "^(?![Ss]team$)(?!.*[Bb]ig [Pp]icture)"
 default_floating = true
 
 # Notification toasts (Steam etc.): bottom-right, pinned, don't take focus.
@@ -76,6 +76,23 @@ match.app_id      = "^md\\.obsidian\\.Obsidian$"
 match.at_startup  = true
 default_output    = "DP-1"
 default_workspace = 2
+
+# ── Game streaming (Sunshine) ───────────────────────────────────────────────
+# Sunshine streams the virtual output "sunshine", which only exists during a
+# session (~/.config/sunshine/umbriel-output.sh). Outside a session
+# default_output is ignored and these windows open as usual.
+# https://github.com/noctalia-dev/umbriel/blob/main/docs/user/streaming.md
+
+[[window_rule]]
+match.app_id       = "^steam$"
+match.title        = "[Bb]ig [Pp]icture"
+default_output     = "sunshine"
+default_fullscreen = true
+
+# Proton games launched from Big Picture.
+[[window_rule]]
+match.app_id   = "^steam_app_"
+default_output = "sunshine"
 
 # ── Layer rules (Noctalia bar, panels, notifications) ───────────────────────
 # Blur only shows where Noctalia is translucent.
