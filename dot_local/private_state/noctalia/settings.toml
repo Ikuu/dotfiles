@@ -73,6 +73,10 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@DP-2" ]
         show_unlock_hint = true
         show_weather = true
 
+[notification]
+follow_focused_output = true
+monitors = []
+
 [shell]
 umbriel_audio_provider_enabled = true
 umbriel_overview_close_on_launch_enabled = true

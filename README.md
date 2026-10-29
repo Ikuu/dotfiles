@@ -139,7 +139,10 @@ noctalia msg config-set bar.default.margin_ends 650
 ```
 
 Changed from defaults: lock screen transition off, bar shortened, network
-name hidden.
+name hidden, notifications follow the focused monitor.
+
+While streaming, Noctalia adds lock screen widgets for the `sunshine` output
+to `settings.toml`; leave those out when re-adding the file.
 
 ## HDR
 
