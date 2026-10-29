@@ -138,8 +138,10 @@ noctalia msg config-get lockscreen        # dump a section
 noctalia msg config-set bar.default.margin_ends 650
 ```
 
-Changed from defaults: lock screen transition off, bar shortened, network
-name hidden, notifications follow the focused monitor.
+Changed from defaults: lock screen transition off, bar shortened and 90%
+opaque with the media widget and active window title in the centre and the clock
+on the right, network name hidden, notifications follow the focused monitor,
+`umbriel-companion` plugin enabled.
 
 While streaming, Noctalia adds lock screen widgets for the `sunshine` output
 to `settings.toml`; leave those out when re-adding the file.

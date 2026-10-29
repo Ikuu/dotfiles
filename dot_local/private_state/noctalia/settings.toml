@@ -1,6 +1,21 @@
 config_version = 16
 
 [bar.default]
+background_opacity = 0.89999997988343239
+center = [ "media", "active_window" ]
+end = [
+    "tray",
+    "notifications",
+    "clipboard",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "session",
+    "clock"
+]
 margin_ends = 650
 
 [lockscreen]
@@ -77,6 +92,9 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@DP-2" ]
 follow_focused_output = true
 monitors = []
 
+[plugins]
+enabled = [ "noctalia/umbriel-companion" ]
+
 [shell]
 umbriel_audio_provider_enabled = true
 umbriel_overview_close_on_launch_enabled = true
@@ -110,5 +128,22 @@ transition_duration = 1500
     [wallpaper.monitors.DP-2]
     path = "/home/alex/Pictures/Wallpapers/wallhaven-9mjoy1.png"
 
+[widget.active_window]
+max_length = 700
+title_scroll = "always"
+
+[widget.control-center]
+enabled = false
+
+[widget.media]
+enabled = false
+
 [widget.network]
+show_label = false
+show_vpn_label = true
+
+[widget.tray]
+drawer = true
+
+[widget.volume]
 show_label = false
