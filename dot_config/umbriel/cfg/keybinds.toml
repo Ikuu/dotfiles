@@ -79,13 +79,13 @@
 # Width (primary extent)
 "Mod+R"       = "window-cycle-primary-extent"
 "Mod+Shift+R" = "window-cycle-primary-extent-back"
-"Mod+Minus"   = "window-modify-primary-extent:-0.1"
-"Mod+Equal"   = "window-modify-primary-extent:0.1"
+"Mod+Minus"   = "window-modify-primary-extent:-0.05"
+"Mod+Equal"   = "window-modify-primary-extent:0.05"
 "Mod+Ctrl+F"  = { action = "spawn:/home/alex/.config/umbriel/scripts/column-fill.py", repeat = false }  # Fill free width
 # Height within a stacked column (secondary extent)
 "Mod+Ctrl+R"      = "window-cycle-secondary-extent"
-"Mod+Shift+Minus" = "window-modify-secondary-extent:-0.1"
-"Mod+Shift+Equal" = "window-modify-secondary-extent:0.1"
+"Mod+Shift+Minus" = "window-modify-secondary-extent:-0.05"
+"Mod+Shift+Equal" = "window-modify-secondary-extent:0.05"
 
 # ── Window state ────────────────────────────────────────────────────────────
 "Mod+Q"       = { action = "window-close",                    repeat = false }
