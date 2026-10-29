@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Scratchpad helper, started from autostart.toml:
+# Scratchpad helper, started from cfg/general.toml:
 # - Hide a scratchpad when its last visible window closes, so it doesn't stay
 #   "shown" and empty (e.g. after typing `exit` in the drop-down terminal).
 # - Resize and re-center a scratchpad window each time it's shown, since Umbriel

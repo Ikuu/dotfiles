@@ -1,13 +1,16 @@
-# ────────────── Output Configuration ──────────────
-# Run `umbriel outputs` to get the correct names for your displays.
+# ── Displays ────────────────────────────────────────────────────────────────
+# `umbriel outputs` lists names and modes; `umbriel color` shows HDR state.
 # https://docs.noctalia.dev/umbriel/outputs/
 
+# Alienware AW3423DWF (left). HDR only for fullscreen HDR content; the screen
+# goes black for 2-3s while it switches.
 [output.DP-1]
-mode = "3440x1440@164.900"
+mode  = "3440x1440@164.900"
 scale = 1.0
-vrr = "fullscreen"
-hdr = "auto"
+vrr   = "fullscreen"
+hdr   = "auto"
 
+# Acer XB271HU (right). No HDR support.
 [output.DP-2]
 mode = "2560x1440@165"
-vrr = "fullscreen"
+vrr  = "fullscreen"

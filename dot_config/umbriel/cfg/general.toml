@@ -1,0 +1,24 @@
+# ── General ─────────────────────────────────────────────────────────────────
+# Autostart, session options and environment. Needs an Umbriel restart.
+# https://docs.noctalia.dev/umbriel/configuration/#general
+
+[general]
+show_cheatsheet = false  # Mod+Shift+Escape still opens it
+
+autostart = [
+  "noctalia",
+  "/home/alex/.config/umbriel/scripts/scratchpad-autohide.py",
+
+  # Startup layout (placement rules are at the end of rules.toml)
+  "discord",
+  "/home/alex/.config/umbriel/scripts/startup-obsidian.sh",  # Waits for Discord
+]
+
+# ── Environment ─────────────────────────────────────────────────────────────
+# Umbriel sets XDG_CURRENT_DESKTOP and XDG_SESSION_TYPE itself.
+
+[environment]
+ELECTRON_OZONE_PLATFORM_HINT        = "auto"
+QT_QPA_PLATFORM                     = "wayland"
+QT_QPA_PLATFORMTHEME                = "gtk3"     # Qt apps (Kate) follow the dark GTK theme
+QT_WAYLAND_DISABLE_WINDOWDECORATION = "1"

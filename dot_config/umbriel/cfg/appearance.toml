@@ -1,0 +1,16 @@
+# ── Appearance ──────────────────────────────────────────────────────────────
+# Colours (borders, tab bar, etc.) come from Noctalia via noctalia.toml.
+# https://docs.noctalia.dev/umbriel/appearance/
+
+[appearance]
+corner_radius = 5  # Default 10
+
+[appearance.blur]
+radius = 3
+
+# ── Animation ───────────────────────────────────────────────────────────────
+# Built-in defaults everywhere except below.
+# https://docs.noctalia.dev/umbriel/animation/
+
+[animation.scratchpad]
+dim = 0.0  # No darkening behind the drop-down terminal (default 0.8)
