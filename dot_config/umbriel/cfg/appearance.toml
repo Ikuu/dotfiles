@@ -2,9 +2,6 @@
 # Colours (borders, tab bar, etc.) come from Noctalia via noctalia.toml.
 # https://docs.noctalia.dev/umbriel/appearance/
 
-[appearance]
-corner_radius = 5  # Default 10
-
 [appearance.blur]
 radius = 3
 

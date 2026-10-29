@@ -39,7 +39,7 @@ Expects these to be installed: `umbriel`, `noctalia`, `ghostty`, `fish`,
 | `display.toml` | DP-1 (3440x1440@165, HDR auto) and DP-2 (2560x1440@165) |
 | `input.toml` | Flat mouse accel, focus follows mouse, top-left hot corner |
 | `layout.toml` | Scrolling layout, width presets, 50% default column width, workspace back-and-forth |
-| `appearance.toml` | 5px corners, blur radius, scratchpad dim off |
+| `appearance.toml` | Blur radius, scratchpad dim off |
 | `keybinds.toml` | All keybinds (defining the table replaces Umbriel's defaults) |
 | `rules.toml` | Window/layer rules, drop-down terminal, startup layout, streaming |
 
