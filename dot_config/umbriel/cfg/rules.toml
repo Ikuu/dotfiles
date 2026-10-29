@@ -36,6 +36,11 @@ match.app_id     = "^waterfox$"
 match.title      = "^Extension: \\(Bitwarden"
 default_floating = true
 
+# ReSkate launcher (~/Games/ReSkate).
+[[window_rule]]
+match.app_id     = "^reskatelauncher\\.exe$"
+default_floating = true
+
 # Steam: float everything except the main window and Big Picture. Umbriel has
 # no `exclude`, so a negative lookahead on the title does it.
 [[window_rule]]
