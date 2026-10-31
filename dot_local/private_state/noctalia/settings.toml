@@ -135,6 +135,9 @@ title_scroll = "on_hover"
 [widget.control-center]
 enabled = false
 
+[widget.launcher]
+enabled = false
+
 [widget.media]
 enabled = false
 
@@ -147,3 +150,6 @@ drawer = true
 
 [widget.volume]
 show_label = false
+
+[widget.wallpaper]
+enabled = false
