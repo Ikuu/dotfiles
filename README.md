@@ -67,6 +67,7 @@ changes need an Umbriel restart. Check edits with `umbriel config validate`.
 | `Mod+Ctrl+Shift+Left/Right` | Stack into neighbouring column, press again to pull out |
 | `Mod+Ctrl+Left/Right` | Focus other monitor |
 | `Mod+Comma` / `Mod+Period` | Send window to left / right monitor |
+| `Mod+Shift+Comma` / `Mod+Shift+Period` | Move the whole workspace to left / right monitor |
 | `Mod+F` / `Mod+Shift+F` | Full column width / fullscreen |
 | `Mod+Ctrl+F` | Widen column to fill the free space |
 | `Mod+R`, `Mod+Minus` / `Mod+Equal` | Cycle width presets, narrower / wider |

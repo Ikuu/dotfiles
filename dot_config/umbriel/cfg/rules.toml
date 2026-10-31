@@ -30,11 +30,13 @@ default_floating = true
 default_maximize = false
 default_position = { x = 20, y = 20, anchor = "bottom_right" }
 
-# Bitwarden extension pop-out in Waterfox.
+# Bitwarden extension pop-out in Waterfox. Hidden from screenshots, screen
+# shares and Sunshine streams.
 [[window_rule]]
 match.app_id     = "^waterfox$"
 match.title      = "^Extension: \\(Bitwarden"
 default_floating = true
+block_capture    = true
 
 # ── Games and launchers ─────────────────────────────────────────────────────
 # Launchers float; games themselves tile or go fullscreen as they ask.
@@ -48,6 +50,12 @@ default_floating = true
 [[window_rule]]
 match.app_id     = "^Lantern Engine$"
 default_floating = true
+
+# Steam: don't let it grab the keyboard, so all keybinds keep working while it
+# has focus (Mod+Escape still passes keys through on demand).
+[[window_rule]]
+match.app_id            = "^steam$"
+allow_shortcuts_inhibit = false
 
 # Steam: float everything except the main window and Big Picture. Umbriel has
 # no `exclude`, so a negative lookahead on the title does it.

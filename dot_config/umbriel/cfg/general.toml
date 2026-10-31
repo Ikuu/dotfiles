@@ -5,6 +5,10 @@
 [general]
 show_cheatsheet = false  # Mod+Shift+Escape still opens it
 
+# X11 primary monitor: X11/XWayland games take their resolutions and fullscreen
+# monitor from it. The monitor identity follows the AW3423DWF between ports.
+xwayland_primary_output = "Dell Inc. AW3423DWF JNG32S3"
+
 autostart = [
   "noctalia",
   "/home/alex/.config/umbriel/scripts/scratchpad-autohide.py",
