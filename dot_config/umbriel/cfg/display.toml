@@ -1,17 +1,22 @@
 # ── Displays ────────────────────────────────────────────────────────────────
 # `umbriel outputs` lists names and modes; `umbriel color` shows HDR state.
+# Positions are fixed so the layout survives a monitor reconnecting (the
+# AW3423DWF drops off in standby), instead of following connection order.
 # https://docs.noctalia.dev/umbriel/outputs/
 
 # Alienware AW3423DWF (left). HDR only for fullscreen HDR content; the screen
 # goes black for 2-3s while it switches.
 [output.DP-1]
-mode           = "3440x1440@164.900"
-scale          = 1.0
-vrr            = "fullscreen"
-hdr            = "auto"
-min_workspaces = 2  # Workspace 2 always exists, for the startup layout in rules.toml
+mode             = "3440x1440@164.900"
+position         = [0, 0]
+scale            = 1.0
+focus_at_startup = true
+vrr              = "fullscreen"
+hdr              = "auto"
+min_workspaces   = 2  # Workspace 2 always exists, for the startup layout in rules.toml
 
 # Acer XB271HU (right). No HDR support.
 [output.DP-2]
-mode = "2560x1440@165"
-vrr  = "fullscreen"
+mode     = "2560x1440@165"
+position = [3440, 0]
+vrr      = "fullscreen"
