@@ -12,8 +12,9 @@ import time
 WIDTH = 0.4
 HEIGHT = 0.45
 
-def msg(action):
-    subprocess.run(["umbriel", "msg", action])
+def msg(*action):
+    # e.g. msg("window-focus", wid): action name, then its word arguments
+    subprocess.run(["umbriel", "msg", *map(str, action)])
 
 def active_id():
     # id of the window that currently has focus, from a one-off snapshot
@@ -65,7 +66,7 @@ def main():
             closed = shown - ids
             # A shown window closed and nothing else in that scratchpad is shown.
             if closed and not now.get(name):
-                msg(f"scratchpad-toggle:{name}")
+                msg("scratchpad-toggle", name)
 
         # Newly shown, or moved to another monitor (toggling it from the other
         # monitor moves it instead of hiding it). These actions act on the
@@ -74,13 +75,13 @@ def main():
         to_fit = {wid for wid, out in outputs_now.items()
                   if outputs_before.get(wid) != out}
         for wid in to_fit:
-            msg(f"window-focus:{wid}")
-            for action in (f"window-set-primary-extent:{WIDTH}",
-                           f"window-set-secondary-extent:{HEIGHT}",
-                           "window-center"):
+            msg("window-focus", wid)
+            for action in (("window-set-primary-extent", WIDTH),
+                           ("window-set-secondary-extent", HEIGHT),
+                           ("window-center",)):
                 if not focused_on(wid):
                     break
-                msg(action)
+                msg(*action)
         before = now
         outputs_before = outputs_now
 

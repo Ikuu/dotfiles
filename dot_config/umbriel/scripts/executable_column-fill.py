@@ -11,8 +11,9 @@ import subprocess
 GAP = 8                  # layout.gap
 SLOT_EXTRA = GAP + 2 * 2  # layout.gap + 2 * appearance.border_width
 
-def msg(action):
-    subprocess.run(["umbriel", "msg", action])
+def msg(*action):
+    # e.g. msg("window-focus", wid): action name, then its word arguments
+    subprocess.run(["umbriel", "msg", *map(str, action)])
 
 def usable_areas():
     # output name -> (x, width) of its usable area
@@ -59,16 +60,16 @@ def main():
     if free <= 0:
         return
     fraction = (focused["w"] + SLOT_EXTRA + free) / space
-    msg(f"window-set-primary-extent:{fraction:.5f}")
+    msg("window-set-primary-extent", f"{fraction:.5f}")
 
     # The view doesn't scroll after a resize, so a neighbour can end up partly
     # off screen. Focusing it scrolls it back in; then return focus.
     still_visible = {w["id"] for w in on_screen(current_windows())}
     pushed_out = [w for w in visible if w["id"] not in still_visible]
     for w in pushed_out:
-        msg(f"window-focus:{w['id']}")
+        msg("window-focus", w["id"])
     if pushed_out:
-        msg(f"window-focus:{focused['id']}")
+        msg("window-focus", focused["id"])
 
 if __name__ == "__main__":
     main()

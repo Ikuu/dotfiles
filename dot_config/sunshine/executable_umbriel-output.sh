@@ -62,16 +62,16 @@ case "$1" in
             read -r index output < "$home"
             target="$(umbriel workspaces --json |
                 jq -r --arg out "$output" --argjson i "$index" \
-                    '.[] | select(.output == $out and .index == $i) | "\(.name)/\(.output)"')"
+                    '.[] | select(.output == $out and .index == $i) | "\(.name) \(.output)"')"
         fi
         [ -n "$target" ] || target="$(umbriel workspaces --json |
             jq -r --arg out "$name" '[.[] | select(.output != $out and .active)]
-                | (map(select(.focused)) + .) | first | "\(.name)/\(.output)" // empty')"
+                | (map(select(.focused)) + .) | first | "\(.name) \(.output)" // empty')"
         for id in $(umbriel windows --json |
             jq -r --arg out "$name:" '.[] | select(.workspace | startswith($out)) | .id'); do
             [ -n "$target" ] || break
-            umbriel msg "window-focus:$id"
-            umbriel msg "window-move-to-workspace-silent:$target"
+            umbriel msg window-focus "$id"
+            umbriel msg window-move-to-workspace-silent "${target% *}" --output "${target#* }"
         done
         umbriel output-destroy "$name" >/dev/null 2>&1 || true
         # Keep the Steam rule until its main window is back (up to 10 seconds).
