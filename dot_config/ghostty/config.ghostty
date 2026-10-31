@@ -9,3 +9,7 @@ theme = noctalia
 
 window-height=30
 window-width=110
+
+# Pass Ctrl+Enter to the terminal app (default: toggle_fullscreen); Claude Code
+# uses it. Umbriel's Mod+Shift+F does fullscreen instead.
+keybind = ctrl+enter=unbind
