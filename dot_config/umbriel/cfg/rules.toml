@@ -36,9 +36,17 @@ match.app_id     = "^waterfox$"
 match.title      = "^Extension: \\(Bitwarden"
 default_floating = true
 
+# ── Games and launchers ─────────────────────────────────────────────────────
+# Launchers float; games themselves tile or go fullscreen as they ask.
+
 # ReSkate launcher (~/Games/ReSkate).
 [[window_rule]]
 match.app_id     = "^reskatelauncher\\.exe$"
+default_floating = true
+
+# Lantern Engine (XWayland).
+[[window_rule]]
+match.app_id     = "^Lantern Engine$"
 default_floating = true
 
 # Steam: float everything except the main window and Big Picture. Umbriel has
@@ -54,6 +62,23 @@ match.title      = "^notificationtoasts_.+_desktop"
 default_position = { x = 0, y = 0, anchor = "bottom_right" }
 default_focused  = false
 default_pinned   = true
+
+# ── Game streaming (Sunshine) ───────────────────────────────────────────────
+# Sunshine streams the virtual output "sunshine", which only exists during a
+# session (~/.config/sunshine/umbriel-output.sh). Outside a session
+# default_output is ignored and these windows open as usual.
+# https://github.com/noctalia-dev/umbriel/blob/main/docs/user/streaming.md
+
+[[window_rule]]
+match.app_id       = "^steam$"
+match.title        = "[Bb]ig [Pp]icture"
+default_output     = "sunshine"
+default_fullscreen = true
+
+# Proton games launched from Big Picture.
+[[window_rule]]
+match.app_id   = "^steam_app_"
+default_output = "sunshine"
 
 # ── Drop-down terminal (Mod+`) ──────────────────────────────────────────────
 # A Ghostty with its own app ID so normal terminals aren't caught.
@@ -87,23 +112,6 @@ match.app_id      = "^md\\.obsidian\\.Obsidian$"
 match.at_startup  = true
 default_output    = "DP-1"
 default_workspace = 2
-
-# ── Game streaming (Sunshine) ───────────────────────────────────────────────
-# Sunshine streams the virtual output "sunshine", which only exists during a
-# session (~/.config/sunshine/umbriel-output.sh). Outside a session
-# default_output is ignored and these windows open as usual.
-# https://github.com/noctalia-dev/umbriel/blob/main/docs/user/streaming.md
-
-[[window_rule]]
-match.app_id       = "^steam$"
-match.title        = "[Bb]ig [Pp]icture"
-default_output     = "sunshine"
-default_fullscreen = true
-
-# Proton games launched from Big Picture.
-[[window_rule]]
-match.app_id   = "^steam_app_"
-default_output = "sunshine"
 
 # ── Layer rules (Noctalia bar, panels, notifications) ───────────────────────
 # Blur only shows where Noctalia is translucent.
