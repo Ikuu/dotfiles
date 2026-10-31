@@ -98,7 +98,7 @@ enabled = [ "noctalia/umbriel-companion" ]
 [shell]
 umbriel_audio_provider_enabled = true
 umbriel_overview_close_on_launch_enabled = true
-umbriel_overview_type_to_launch_enabled = true
+umbriel_overview_type_to_launch_enabled = false
 
 [theme]
 builtin = "Catppuccin"
@@ -130,7 +130,7 @@ transition_duration = 1500
 
 [widget.active_window]
 max_length = 700
-title_scroll = "always"
+title_scroll = "on_hover"
 
 [widget.control-center]
 enabled = false
