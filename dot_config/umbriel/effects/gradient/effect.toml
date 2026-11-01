@@ -1,0 +1,8 @@
+# Focused window border: diagonal gradient (bottom left to top right) between
+# Noctalia's accent colours, so it follows the wallpaper theme. Selected in
+# cfg/appearance.toml.
+[effects.preset.gradient]
+kind     = "border"
+shader   = "shader.glsl"
+palette  = true   # umbriel_palette_at: accent_primary, accent_secondary, ...
+animated = false  # Static, no per-frame redraws

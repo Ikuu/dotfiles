@@ -5,6 +5,10 @@
 [appearance.blur]
 radius = 3
 
+# Focused window border: Noctalia accent gradient (effects/gradient/).
+[effects]
+border = "gradient"
+
 # ── Animation ───────────────────────────────────────────────────────────────
 # Built-in defaults everywhere except below.
 # https://docs.noctalia.dev/umbriel/animation/

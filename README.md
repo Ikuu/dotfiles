@@ -39,7 +39,7 @@ Expects these to be installed: `umbriel`, `noctalia`, `ghostty`, `fish`,
 | `display.toml` | DP-1 (3440x1440@165, HDR auto) and DP-2 (2560x1440@165) |
 | `input.toml` | Flat mouse accel, focus follows mouse, top-left hot corner |
 | `layout.toml` | Scrolling layout, width presets, 50% default column width, workspace back-and-forth |
-| `appearance.toml` | Blur radius, scratchpad dim off |
+| `appearance.toml` | Blur radius, focused border gradient, scratchpad dim off |
 | `keybinds.toml` | All keybinds (defining the table replaces Umbriel's defaults) |
 | `rules.toml` | Window/layer rules, drop-down terminal, startup layout, streaming |
 
@@ -98,6 +98,9 @@ Navigation binds use `allow_when_inhibited`, so they keep working when an app
 - `scripts/startup-obsidian.sh` (autostart): starts Obsidian after Discord so
   workspace 2 is Discord left, Obsidian right. Startup rules only match in
   the first 60s.
+- `effects/gradient/`: border effect for the focused window, a diagonal
+  gradient from Noctalia's `accent_primary` (bottom left) to
+  `accent_secondary` (top right), so it follows the wallpaper colours.
 - `~/.local/bin/dot-screenshot`: works under Umbriel (uses
   `umbriel focused-window` / `umbriel outputs`) and Niri.
 
