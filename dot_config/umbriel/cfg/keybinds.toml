@@ -108,6 +108,8 @@
 "Mod+Tab"       = "workspace-focus-last"
 "Mod+WheelUp"   = { action = "workspace-previous", cooldown_ms = 150 }
 "Mod+WheelDown" = { action = "workspace-next",     cooldown_ms = 150 }
+"Mod+Ctrl+Up"   = { action = "workspace-previous", allow_when_inhibited = true }
+"Mod+Ctrl+Down" = { action = "workspace-next",     allow_when_inhibited = true }
 
 "Mod+1" = "workspace-switch 1"
 "Mod+2" = "workspace-switch 2"
