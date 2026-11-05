@@ -38,6 +38,10 @@ match.title      = "^Extension: \\(Bitwarden"
 default_floating = true
 block_capture    = true
 
+[[window_rule]]
+match.app_id     = "^com\\.chatterino\\.chatterino$"  # Twitch chat
+default_floating = true
+
 # ── Games and launchers ─────────────────────────────────────────────────────
 # Launchers float; games themselves tile or go fullscreen as they ask.
 

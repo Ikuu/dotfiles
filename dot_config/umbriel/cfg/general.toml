@@ -12,6 +12,7 @@ xwayland_primary_output = "Dell Inc. AW3423DWF JNG32S3"
 autostart = [
   "noctalia",
   "/home/alex/.config/umbriel/scripts/scratchpad-autohide.py",
+  "/home/alex/.config/umbriel/scripts/fullscreen-own-workspace.py",  # Fullscreen-on-open windows get their own workspace
 
   # Startup layout (placement rules are at the end of rules.toml)
   "discord",
