@@ -152,6 +152,8 @@ application/vnd.comicbook-rar=okularApplication_comicbook.desktop
 application/x-mobipocket-ebook=okularApplication_mobi.desktop
 application/x-fictionbook+xml=okularApplication_fb.desktop
 x-scheme-handler/nxm=amethystmodmanager-nxm.desktop
+x-scheme-handler/gale=amethystmodmanager-gale.desktop
+x-scheme-handler/wabbajack=amethystmodmanager-wabbajack.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Waterfox-6AB4U3.desktop;userapp-Waterfox-S1JOR3.desktop;
@@ -168,3 +170,5 @@ application/octet-stream=mpv.desktop;
 x-scheme-handler/ror2mm=amethystmodmanager-ror2mm.desktop
 x-scheme-handler/modl=amethystmodmanager-modl.desktop
 x-scheme-handler/nxm=amethystmodmanager-nxm.desktop
+x-scheme-handler/gale=amethystmodmanager-gale.desktop
+x-scheme-handler/wabbajack=amethystmodmanager-wabbajack.desktop
