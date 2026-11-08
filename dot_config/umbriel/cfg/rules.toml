@@ -42,6 +42,12 @@ block_capture    = true
 match.app_id     = "^com\\.chatterino\\.chatterino$"  # Twitch chat
 default_floating = true
 
+# Dolphin warnings, e.g. "This will start the program" when opening an executable.
+[[window_rule]]
+match.app_id     = "^org\\.kde\\.dolphin$"
+match.title      = "^Warning — Dolphin$"
+default_floating = true
+
 # ── Games and launchers ─────────────────────────────────────────────────────
 # Launchers float; games themselves tile or go fullscreen as they ask.
 
