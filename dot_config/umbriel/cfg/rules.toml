@@ -42,10 +42,18 @@ block_capture    = true
 match.app_id     = "^com\\.chatterino\\.chatterino$"  # Twitch chat
 default_floating = true
 
-# Dolphin warnings, e.g. "This will start the program" when opening an executable.
+# Dolphin message boxes, e.g. "This will start the program" when opening an
+# executable, or errors during a file transfer.
 [[window_rule]]
 match.app_id     = "^org\\.kde\\.dolphin$"
-match.title      = "^Warning — Dolphin$"
+match.title      = "^(Warning|Information|Error) — Dolphin$"
+default_floating = true
+
+# Dolphin file transfer progress. The title follows the operation, and may
+# start as KDE's default "Progress Dialog".
+[[window_rule]]
+match.app_id     = "^org\\.kde\\.dolphin$"
+match.title      = "^(Progress Dialog|Copying|Moving|Deleting|Creating directory|Examining|Transferring)\\b.* — Dolphin$"
 default_floating = true
 
 # ── Games and launchers ─────────────────────────────────────────────────────
