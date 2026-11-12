@@ -20,6 +20,7 @@
 # ── Noctalia ────────────────────────────────────────────────────────────────
 # https://docs.noctalia.dev/noctalia/ipc/
 "Mod+D"       = "spawn noctalia msg panel-toggle launcher"
+"Mod+Shift+D" = { action = "spawn noctalia msg panel-toggle launcher '/f '", repeat = false }  # File search (local/file-search plugin)
 "Mod+S"       = { action = "spawn noctalia msg panel-toggle control-center", repeat = false }
 "Mod+Shift+S" = { action = "spawn noctalia msg settings-toggle",             repeat = false }
 "Mod+V"       = { action = "spawn noctalia msg panel-toggle clipboard",      repeat = false }

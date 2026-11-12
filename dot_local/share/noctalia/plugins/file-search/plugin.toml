@@ -1,0 +1,23 @@
+# File Search - find files in the launcher with /f.
+#
+# fd lists every file in home and the extra drives into per-source lists in
+# ~/.cache/noctalia-file-search (refresh.sh). Queries run fzf --filter over
+# those lists, so the slow network shares never hold up typing.
+
+id = "local/file-search"
+name = "File Search"
+version = "1.0.0"
+plugin_api = 43
+author = "local"
+license = "MIT"
+dependencies = ["fd", "fzf"]
+tags = ["launcher", "files"]
+icon = "file-search"
+description = "Search home and the extra drives from the launcher with /f."
+
+[[launcher_provider]]
+id = "files"
+entry = "files.luau"
+prefix = "f"
+glyph = "file"
+debounce_ms = 80

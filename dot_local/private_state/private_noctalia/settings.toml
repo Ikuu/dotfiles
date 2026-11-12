@@ -121,7 +121,7 @@ follow_focused_output = true
 monitors = []
 
 [plugins]
-enabled = [ "noctalia/umbriel-companion" ]
+enabled = [ "noctalia/umbriel-companion", "local/file-search" ]
 
 [shell]
 umbriel_audio_provider_enabled = true
