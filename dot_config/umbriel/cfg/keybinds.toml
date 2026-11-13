@@ -37,7 +37,7 @@
 
 # ── Screenshots ─────────────────────────────────────────────────────────────
 # Noctalia captures (screen frozen for regions), then pipes the image to Satty in a window
-# ([shell.screenshot] pipe_command). In Satty, Ctrl+C copies and saves to ~/Pictures/Screenshots.
+# ([shell.screenshot] pipe_command). In Satty, Ctrl+C copies; Ctrl+S saves to ~/Pictures/Screenshots.
 "Ctrl+Shift+1" = { action = "spawn noctalia msg screenshot-region",     repeat = false }  # Region (screen frozen)
 "Ctrl+Shift+2" = { action = "spawn noctalia msg screenshot-window",     repeat = false }  # Focused window
 "Ctrl+Shift+3" = { action = "spawn noctalia msg screenshot-fullscreen", repeat = false }  # Focused monitor

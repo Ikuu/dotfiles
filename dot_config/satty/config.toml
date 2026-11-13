@@ -1,5 +1,5 @@
 [general]
-early-exit = true
+early-exit = true                        # close after Copy (Ctrl+C) or Save (Ctrl+S)
 copy-command = "wl-copy --type image/png"
-save-after-copy = true   # Ctrl+C copies and saves (to the path Noctalia passes with -o), so nothing gets lost
 initial-tool = "brush"
+# Copy only copies; Save writes to the path Noctalia passes with -o (~/Pictures/Screenshots).
