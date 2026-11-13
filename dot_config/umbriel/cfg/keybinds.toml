@@ -26,6 +26,7 @@
 "Mod+V"       = { action = "spawn noctalia msg panel-toggle clipboard",      repeat = false }
 "Mod+Ctrl+V"  = { action = "spawn noctalia msg clipboard-clear",             repeat = false }
 "Alt+Tab"     = { action = "spawn noctalia msg window-switcher hold",        repeat = false }  # Quick tap: previous window
+"Alt+Shift+Tab" = { action = "spawn noctalia msg window-switcher hold reverse", repeat = false }  # Opens going backwards
 
 # ── Session ─────────────────────────────────────────────────────────────────
 "Mod+Alt+L"        = { action = "spawn noctalia msg session lock",          repeat = false }

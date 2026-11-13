@@ -9,7 +9,7 @@ accel_profile = "flat"  # No pointer acceleration
 sensitivity   = 0.0
 
 [input.focus]
-follows_mouse = true
+follows_mouse = "sloppy"
 
 # ── Hot corners ─────────────────────────────────────────────────────────────
 
