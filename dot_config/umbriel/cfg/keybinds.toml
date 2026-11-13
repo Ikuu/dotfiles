@@ -36,10 +36,12 @@
 "Mod+Escape"       = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }  # Get keybinds back from a fullscreen app
 
 # ── Screenshots ─────────────────────────────────────────────────────────────
-# ~/.local/bin/dot-screenshot, opens the result in Satty.
-"Ctrl+Shift+1" = { action = "spawn dot-screenshot region",          repeat = false }
-"Ctrl+Shift+2" = { action = "spawn dot-screenshot window",          repeat = false }
-"Ctrl+Shift+3" = { action = "spawn dot-screenshot monitor-focused", repeat = false }
+# Noctalia captures (screen frozen for regions), then pipes the image to Satty in a window
+# ([shell.screenshot] pipe_command). In Satty, Ctrl+C copies and saves to ~/Pictures/Screenshots.
+"Ctrl+Shift+1" = { action = "spawn noctalia msg screenshot-region",     repeat = false }  # Region (screen frozen)
+"Ctrl+Shift+2" = { action = "spawn noctalia msg screenshot-window",     repeat = false }  # Focused window
+"Ctrl+Shift+3" = { action = "spawn noctalia msg screenshot-fullscreen", repeat = false }  # Focused monitor
+"Ctrl+Shift+4" = { action = "spawn ocr-region",                         repeat = false }  # Copy text from a region (OCR)
 
 # ── Media, volume, brightness ───────────────────────────────────────────────
 # Routed through Noctalia so its OSD shows.

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Select a screen region and copy the text in it to the clipboard (OCR with tesseract).
+# Bound to Ctrl+Shift+4 in ~/.config/umbriel/cfg/keybinds.toml. Screenshots themselves are Noctalia's
+# built-in tool (Ctrl+Shift+1/2/3, settings under [shell.screenshot]).
+set -o errexit -o pipefail -o nounset
+
+region="$(slurp -d)" || exit 0            # Esc cancels
+text="$(grim -g "$region" -t png - | tesseract - - -l eng --psm 6 2>/dev/null | sed -e 's/[[:space:]]*$//')"
+
+if [[ -z "${text//[[:space:]]/}" ]]; then
+    notify-send -a "OCR" -i edit-copy "No text found" "Nothing recognised in that region."
+    exit 1
+fi
+
+printf '%s' "$text" | wl-copy
+preview="$(printf '%s' "$text" | head -c 120)"
+notify-send -a "OCR" -i edit-copy "Text copied" "$preview"

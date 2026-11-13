@@ -1,4 +1,5 @@
 [general]
 early-exit = true
 copy-command = "wl-copy --type image/png"
+save-after-copy = true   # Ctrl+C copies and saves (to the path Noctalia passes with -o), so nothing gets lost
 initial-tool = "brush"
