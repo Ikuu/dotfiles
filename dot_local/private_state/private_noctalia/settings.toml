@@ -125,6 +125,9 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@DP-2", "lock
 follow_focused_output = true
 monitors = []
 
+[plugin_settings."davemhammer/tailscale"]
+notify_on_peer_change = false
+
 [plugins]
 enabled = [ "noctalia/umbriel-companion", "local/file-search", "davemhammer/tailscale" ]
 
