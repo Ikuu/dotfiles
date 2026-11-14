@@ -38,10 +38,6 @@ match.title      = "^Extension: \\(Bitwarden"
 default_floating = true
 block_capture    = true
 
-[[window_rule]]
-match.app_id     = "^com\\.chatterino\\.chatterino$"  # Twitch chat
-default_floating = true
-
 # Dolphin message boxes, e.g. "This will start the program" when opening an
 # executable, or errors during a file transfer.
 [[window_rule]]
