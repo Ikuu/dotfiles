@@ -14,4 +14,4 @@ for _ in $(seq 80); do
   sleep 0.5
 done
 
-exec /home/alex/Applications/Obsidian.AppImage --no-sandbox
+exec /home/alex/Applications/Obsidian.AppImage --no-sandbox --enable-wayland-ime --wayland-text-input-version=3
