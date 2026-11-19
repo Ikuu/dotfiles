@@ -11,6 +11,8 @@ xwayland_primary_output = "Dell Inc. AW3423DWF JNG32S3"
 
 autostart = [
   "noctalia",
+  "/usr/lib/polkit-kde-authentication-agent-1",  # Polkit password prompts (pkexec, package installer, etc.)
+  "fcitx5 -d --replace",  # Chinese (Pinyin) input; Ctrl+Space switches English/中文
   "/home/alex/.config/umbriel/scripts/scratchpad-autohide.py",
   "/home/alex/.config/umbriel/scripts/fullscreen-own-workspace.py",  # Fullscreen-on-open windows get their own workspace
 
@@ -27,3 +29,4 @@ ELECTRON_OZONE_PLATFORM_HINT        = "auto"
 QT_QPA_PLATFORM                     = "wayland"
 QT_QPA_PLATFORMTHEME                = "gtk3"     # Qt apps (Kate) follow the dark GTK theme
 QT_WAYLAND_DISABLE_WINDOWDECORATION = "1"
+XMODIFIERS                          = "@im=fcitx"  # Chinese input for XWayland apps; Wayland GTK/Qt apps use text-input-v3, so no GTK/QT_IM_MODULE
