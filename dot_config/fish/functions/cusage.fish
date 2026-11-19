@@ -1,10 +1,10 @@
-function cusage --description 'Show Claude Code usage with colour and progress bars'
-    # Raw mode: cusage --raw (or any extra args) shows the original output
+function cusage --description 'Show Claude Code usage with colour and gradient progress bars'
+    # cusage --raw shows the original output; any other args pass through
     if set -q argv[1]
         if test "$argv[1]" = --raw
-            claude -p "/usage"
+            claude -p "/usage" </dev/null
         else
-            claude -p "/usage" $argv
+            claude -p "/usage" $argv </dev/null
         end
         return
     end
@@ -40,15 +40,13 @@ function cusage --description 'Show Claude Code usage with colour and progress b
             # Gradient bar: each cell is coloured by its position along the
             # bar, green at 0% → yellow at 50% → red at 100%
             set -l bar ''
-            set -l colour (__cusage_gradient 0)
             for i in (seq 1 $filled)
-                set colour (__cusage_gradient (math "($i - 0.5) / $width"))
-                set bar "$bar"(set_color $colour)'█'
+                set bar "$bar"(set_color (__cusage_gradient (math "($i - 0.5) / $width")))'█'
             end
             set bar "$bar$dim$(string repeat -n $empty '░')$normal"
 
             # Percentage takes the colour of the bar's leading edge
-            set colour (__cusage_gradient (math "$pct / 100"))
+            set -l colour (__cusage_gradient (math "$pct / 100"))
 
             printf '  %-20s %s %s%4s%%%s  %sresets %s%s\n' \
                 $label "$bar" \
