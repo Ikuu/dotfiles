@@ -5,8 +5,8 @@ background_opacity = 0.89999997988343239
 center = [ "media", "active_window" ]
 end = [
     "tray",
-    "davemhammer/tailscale:status",
     "notifications",
+    "davemhammer/tailscale:status",
     "clipboard",
     "network",
     "bluetooth",
@@ -18,6 +18,11 @@ end = [
     "clock"
 ]
 margin_ends = "20%"
+{{- if hasKey . "weather_location" }}
+
+[location]
+address = {{ .weather_location | quote }}
+{{- end }}
 
 [lockscreen]
 dnd = true
