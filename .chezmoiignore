@@ -14,3 +14,6 @@ README.md
 .config/sunshine/credentials/
 .config/sunshine/sunshine_state.json
 .config/sunshine/sunshine.log*
+
+# System files, installed by .chezmoiscripts/run_onchange_after_udev-rules.sh
+system/

@@ -1,0 +1,4 @@
+# Compx-based mice (ATK / VXE / MCHOSE etc., USB vendor 373b):
+# let the logged-in user open the raw HID device so the browser
+# (WebHID) configurator can talk to the mouse.
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373b", TAG+="uaccess"

@@ -1,0 +1,21 @@
+#!/bin/bash
+# Install udev rules from system/etc/udev/rules.d into /etc (needs sudo).
+# chezmoi re-runs this when any rule changes:
+{{ range (glob (joinPath .chezmoi.sourceDir "system/etc/udev/rules.d/*.rules")) -}}
+# {{ base . }} {{ include . | sha256sum }}
+{{ end -}}
+set -euo pipefail
+src="{{ .chezmoi.sourceDir }}/system/etc/udev/rules.d"
+changed=0
+for f in "$src"/*.rules; do
+    dest="/etc/udev/rules.d/$(basename "$f")"
+    if ! cmp -s "$f" "$dest"; then
+        sudo install -m 644 "$f" "$dest"
+        echo "installed $dest"
+        changed=1
+    fi
+done
+if [ "$changed" = 1 ]; then
+    sudo udevadm control --reload-rules
+    sudo udevadm trigger --subsystem-match=hidraw
+fi
