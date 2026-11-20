@@ -17,6 +17,7 @@ end = [
     "session",
     "clock"
 ]
+layer = "auto"
 margin_ends = "20%"
 {{- if hasKey . "weather_location" }}
 
@@ -217,6 +218,7 @@ hide_when_no_unread = true
 drawer = true
 
 [widget.volume]
+hide_label_when_muted = true
 peek = true
 show_label = true
 
