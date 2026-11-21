@@ -1,0 +1,17 @@
+#!/bin/bash
+# Install system-wide WirePlumber config from system/etc/wireplumber into /etc
+# (needs sudo). System-wide so the login screen's WirePlumber picks it up too.
+# chezmoi re-runs this when any file changes:
+{{ range (glob (joinPath .chezmoi.sourceDir "system/etc/wireplumber/wireplumber.conf.d/*.conf")) -}}
+# {{ base . }} {{ include . | sha256sum }}
+{{ end -}}
+set -euo pipefail
+src="{{ .chezmoi.sourceDir }}/system/etc/wireplumber/wireplumber.conf.d"
+dest_dir=/etc/wireplumber/wireplumber.conf.d
+for f in "$src"/*.conf; do
+    dest="$dest_dir/$(basename "$f")"
+    if ! cmp -s "$f" "$dest"; then
+        sudo install -D -m 644 "$f" "$dest"
+        echo "installed $dest (restart WirePlumber or log out to apply)"
+    fi
+done
