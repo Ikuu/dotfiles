@@ -1,0 +1,5 @@
+# Behringer UMC202HD powers up with its hardware output at 104/127 (-23 dB = 41%)
+# and alsactl restore (90-alsa-restore.rules) doesn't apply the saved value for
+# this UCM card. Set it to 0 dB whenever the card appears. Volume is done in
+# software by WirePlumber (51-umc202hd-soft-mixer.conf).
+ACTION=="add", SUBSYSTEM=="sound", KERNEL=="controlC*", ATTRS{idVendor}=="1397", ATTRS{idProduct}=="0507", RUN+="/usr/bin/amixer -q -c %n sset 'UMC202HD 192k Output' 127"
