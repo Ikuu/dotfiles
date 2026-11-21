@@ -2,4 +2,5 @@
 # and alsactl restore (90-alsa-restore.rules) doesn't apply the saved value for
 # this UCM card. Set it to 0 dB whenever the card appears. Volume is done in
 # software by WirePlumber (51-umc202hd-soft-mixer.conf).
-ACTION=="add", SUBSYSTEM=="sound", KERNEL=="controlC*", ATTRS{idVendor}=="1397", ATTRS{idProduct}=="0507", RUN+="/usr/bin/amixer -q -c %n sset 'UMC202HD 192k Output' 127"
+# Talks to hw:N directly (no UCM/ctl-remap config) and logs to the journal (tag umc202hd).
+ACTION=="add", SUBSYSTEM=="sound", KERNEL=="controlC*", ATTRS{idVendor}=="1397", ATTRS{idProduct}=="0507", RUN+="/bin/sh -c '/usr/bin/amixer -q -D hw:%n sset \"UMC202HD 192k Output\" 127 2>&1 | /usr/bin/logger -t umc202hd; /usr/bin/amixer -D hw:%n cget numid=9 | /usr/bin/grep values= | /usr/bin/logger -t umc202hd'"
