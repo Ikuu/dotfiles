@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Fcitx 5
+# Hidden: Umbriel's autostart (cfg/general.toml) launches fcitx5. Letting systemd's
+# XDG autostart start a second copy at the same time made the --replace race leave
+# fcitx5 without its Wayland input-method connection (Ctrl+Space did nothing).
+Hidden=true
