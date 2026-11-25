@@ -1,0 +1,35 @@
+{
+  "theme": "dark",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/turn-timer.sh start 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/turn-timer.sh stop 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pw-play /usr/share/sounds/ocean/stereo/message-attention.oga >/dev/null 2>&1 &"
+          }
+        ]
+      }
+    ]
+  }
+}
